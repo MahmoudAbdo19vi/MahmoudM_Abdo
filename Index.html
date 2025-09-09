@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mahmoud Abdo_Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0f17;
+            --card: #111827;
+            --text: #ffffff;
+            --muted: #f7aff7;
+            --brand: #60a5fa;
+            --accent: #34d399;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, system-ui, Arial, sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin-inline: auto
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: linear-gradient(#0b0f17cc, #0b0f1700);
+            backdrop-filter: blur(6px)
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: .5px
+        }
+
+        .pill {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            background: #0f172a;
+            border: 1px solid #1f2937;
+            padding: 8px 12px;
+            border-radius: 999px
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--brand);
+            color: #0b0f17;
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: .25s transform
+        }
+
+        .btn:hover {
+            transform: translateY(-2px)
+        }
+
+        .hero {
+            min-height: 84vh;
+            display: grid;
+            place-items: center;
+            padding-block: 60px
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 36px;
+            align-items: center
+        }
+
+        .title {
+            font-size: clamp(32px, 5vw, 64px);
+            line-height: 1.05;
+            margin: 0
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin: 14px 0 28px
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px
+        }
+
+        .tag {
+            background: #0f172a;
+            border: 1px solid #1f2937;
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-size: 14px
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid #1f2937;
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 10px 30px #00000033
+        }
+
+        .projects {
+            padding-block: 64px
+        }
+
+        .grid {
+            display: grid;
+            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+        }
+
+        .project {
+            position: relative;
+            overflow: hidden
+        }
+
+        .project img {
+            border-radius: 14px;
+            aspect-ratio: 16/10;
+            object-fit: cover;
+            filter: saturate(1.05)
+        }
+
+        .project .info {
+            position: absolute;
+            inset: auto 10px 10px 10px;
+            background: #0b0f17cc;
+            border: 1px solid #1f2937;
+            color: #e5e7eb;
+            border-radius: 12px;
+            padding: 12px;
+            transform: translateY(8px);
+            opacity: 0;
+            transition: .3s
+        }
+
+        .project:hover .info {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .skills {
+            padding-block: 64px
+        }
+
+        .skillbar {
+            height: 10px;
+            background: #111827;
+            border-radius: 999px;
+            overflow: hidden;
+            border: 1px solid #1f2937
+        }
+
+        .skillbar>span {
+            display: block;
+            height: 100%;
+            background: linear-gradient(90deg, var(--brand), var(--accent));
+            width: 0%
+        }
+
+        .about {
+            padding-block: 64px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px
+        }
+
+        .contact {
+            padding-block: 64px
+        }
+
+        .footer {
+            padding: 30px 0;
+            color: #9ca3af;
+            text-align: center;
+            border-top: 1px solid #1f2937
+        }
+
+        @media (max-width:900px) {
+            .hero-grid {
+                grid-template-columns: 1fr
+            }
+
+            .about {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <div class="brand">Software Engineer
+                (QA & Front‑End )
+            </div>
+            <div class="pill">
+                <span>📍 Alexandria</span>
+                <a class="btn" href="d:\CVs&Portfolio\Mahmoud_Abdo-CV.pdf">MY CV</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero container">
+        <div class="hero-grid">
+            <div>
+                <p class="tag">Available for freelance • 2025</p>
+                <h3 class="title" style="font-size: 200%;">Hi 👋, I’m Mahmoud Abdo, a Computer Science student
+                    passionate about Software Testing (learning it through the Digital Egypt Pioneers Initiative) and
+                    Front-end Development.</h3>
+                <p class="subtitle">Skilled in<b>Front‑End</b> HTML, CSS, and Bootstrap, with ongoing learning in
+                    JavaScript, REACT, JQUERY, Tailwind, Sass.
+                    & <b>Software Testing</b>Manual Testing (ISTQB) Fundamentals With ongoing learning in
+                    Automation ,JMeter ,Jira ,Postman.
+                    & <b>Java</b>Fundamentals and OOP.</p>
+                <div class="tags">
+                    <span class="tag">JAVA</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">BOOTSTRAP</span>
+                    <!-- <span class="tag">Cypress</span> -->
+                    <!-- <span class="tag">React</span> -->
+                </div>
+                <div style="margin-top:22px;display:flex;gap:12px">
+                    <a class="btn" href="#projects">See Projects</a>
+                    <a class="btn" style="background:var(--accent)" href="mailto:MahmoudM_Abdo@outlook.com">Email Me</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="c:\Users\Mahmoud\OneDrive\Pictures\houda.jpeg" alt="hero" />
+            </div>
+        </div>
+    </header>
+
+    <section id="projects" class="projects container">
+        <h2 style="margin:0 0 16px">Featured Projects</h2>
+        <p class="subtitle">Hover to peek details • Click to open</p>
+        <div class="grid">
+            <a class="project" href="#" target="_blank">
+                <img src="c:\Users\Mahmoud\Downloads\java.jpg" alt="Project 1" />
+                <div class="info"><b>JAVA</b><br><small>OOP + main java </small></div>
+            </a>
+            <a class="project" href="#" target="_blank">
+                <img src="c:\Users\Mahmoud\Downloads\frontend devlopper.jpg" alt="Project 2" />
+                <div class="info"><b>Front-end</b><br><small>Html + Css +BootStrap</small></div>
+            </a>
+            <a class="project" href="#" target="_blank">
+                <img src="c:\Users\Mahmoud\Downloads\A Complete Guide to Automated Testing with Embarcadero.jpg"
+                    alt="Project 3" />
+                <div class="info"><b>Testing</b><br><small>Manaul Testing + Test Cases</small></div>
+            </a>
+        </div>
+    </section>
+
+    <section class="skills container">
+        <h2 style="margin:0 0 16px">Skills</h2>
+        <div class="card" style="display:grid;gap:18px">
+            <div>
+                <div style="display:flex;justify-content:space-between"><span>JAVA</span><span>80%</span></div>
+                <div class="skillbar"><span style="width:90%"></span></div>
+            </div>
+            <div>
+                <div style="display:flex;justify-content:space-between">
+                    <span>Manaul Testing</span><span>70%</span>
+                </div>
+                <div class="skillbar"><span style="width:88%"></span></div>
+            </div>
+            <div>
+                <div style="display:flex;justify-content:space-between"><span>HTML</span><span>95%</span>
+                </div>
+                <div class="skillbar"><span style="width:85%"></span></div>
+            </div>
+            <div>
+                <div style="display:flex;justify-content:space-between"><span>Css
+                    </span><span>80%</span></div>
+                <div class="skillbar"><span style="width:80%"></span></div>
+                <div style="display:flex;justify-content:space-between"><span>BootStrap
+                    </span><span>80%</span></div>
+                <div class="skillbar"><span style="width:80%"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about container">
+        <div class="card">
+            <h2>About</h2>
+            <p>
+                I’m a second-year Computer Science student passionate about Web Development and Software Testing.
+                Currently focusing on Front-end Development, I’m proficient in HTML, CSS, and Bootstrap, and I’m
+                learning JavaScript, React, Tailwind, and Sass. At the same time, I’m exploring Software Testing, with
+                knowledge in Manual Testing and studying ISTQB, planning to advance into Automation Testing soon. My
+                goal is to keep improving my skills and build practical projects that reflect my growth in both fields.
+            </p>
+            <ul>
+                <li>✅ 10+ shipped projects</li>
+                <li>⚙️ CI/CD with GitHub Actions</li>
+                <li>🧪 E2E tests that catch regressions early</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>Tech I Use</h2>
+            <p>JAVA , HTML , CSS ,BOOTSTRAP</p>
+            <div class="tags">
+                <a class="tag" href="https://github.com/MahmoudAbdo19vi" target="_blank">GitHub</a>
+                <a class="tag" href="https://www.linkedin.com/in/mahmoud-abdo-51a390375" target="_blank">LinkedIn</a>
+                <a class="tag" href="#projects">Case Studies</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact container">
+        <div class="card">
+            <h2>Contact</h2>
+            <p class="subtitle">Let’s build something great.</p>
+            <form onsubmit="event.preventDefault(); alert('Thanks! I will reply soon.');">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+                    <input required placeholder="Name"
+                        style="padding:12px 14px;border-radius:10px;border:1px solid #1f2937;background:#0f172a;color:#e5e7eb" />
+                    <input type="email" required placeholder="Email"
+                        style="padding:12px 14px;border-radius:10px;border:1px solid #1f2937;background:#0f172a;color:#e5e7eb" />
+                </div>
+                <textarea required placeholder="Your message" rows="5"
+                    style="width:100%;padding:12px 14px;border-radius:10px;border:1px solid #1f2937;background:#0f172a;color:#e5e7eb"></textarea>
+                <div style="margin-top:12px"><button class="btn" type="submit">Send Message</button></div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">© 2025 Mahmoud — Crafted with ❤️ in Cairo</footer>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script>
+        // Intro reveal
+        gsap.from('.title', { y: 40, opacity: 0, duration: 1, ease: 'power3.out' });
+        gsap.from('.subtitle', { y: 20, opacity: 0, duration: .8, delay: .2 });
+        gsap.from('.tag', { opacity: 0, y: 10, stagger: .05, delay: .3 });
+
+        // Scroll animations
+        gsap.utils.toArray('.card').forEach((el, i) => {
+            gsap.from(el, {
+                scrollTrigger: { trigger: el, start: 'top 85%' },
+                y: 24, opacity: 0, duration: .6, ease: 'power2.out'
+            })
+        });
+
+        // Animated skill bars on view
+        gsap.utils.toArray('.skillbar > span').forEach((bar) => {
+            gsap.to(bar, {
+                scrollTrigger: { trigger: bar.parentElement, start: 'top 85%' },
+                width: bar.style.width, duration: 1, ease: 'power3.out'
+            })
+        })
+    </script>
+</body>
+
+</html>
